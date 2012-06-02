@@ -48,7 +48,7 @@ using Poco::RegularExpression;
 
 #endif
 
-
+#include "sigar.h"
 
 
 /*
@@ -103,17 +103,50 @@ public:
     //string getSysConfInfo(int NAME);
 
     
-    
-    void test();    
 private:
     // singleton
     ofxActivityMonitor();
+    virtual ~ofxActivityMonitor();
     ofxActivityMonitor(ofxActivityMonitor const&){};
     ofxActivityMonitor& operator=(ofxActivityMonitor const&){};
     static ofxActivityMonitor* instance;
 
     // calculations
-    int calcNumCpuCores();
+    
+    bool getCpuInfo();
+    bool getCpuList();
+    bool getProcList();
+    bool getFsList();
+    bool getMem();
+    bool getNetConn();
+    bool getNetif();    
+    
+    bool getResLimit();
+    bool getSwap();
+    
+    bool getSysInfo();
+    
+    
+    bool version();
+    bool uptime();
+    
+    bool pid();
+    
+    bool moreProc();
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     vector<float> calcCPULoadAvg();
 
     int calcMemoryTotal();
@@ -153,6 +186,25 @@ private:
     string shadingLangVersionGPU;
     
     vector<string> extensionsGPU;
+    
+    
+    
+    
+    
+    
+    
+    sigar_cpu_list_t cpulist;
+    sigar_cpu_info_list_t cpuinfo;
+
+    
+    
+    
+    
+    
+    
+    
+    // the main sigar object
+    sigar_t *sigar;
     
 
 };

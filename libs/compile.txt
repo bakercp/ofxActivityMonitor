@@ -1,0 +1,1 @@
+./configure CPPFLAGS=-m32 CFLAGS=-m32 --enable-static --prefix=/Users/bakercp/Programming/c-cpp/of-my/openFrameworks/_MYAPPS/ofxActivityMonitor/libs/sigar/

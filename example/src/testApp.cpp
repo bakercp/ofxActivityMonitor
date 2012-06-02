@@ -2,7 +2,9 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-
+    mon = ofxActivityMonitor::Instance();
+    
+    
 }
 
 //--------------------------------------------------------------
@@ -15,47 +17,47 @@ void testApp::draw(){
 
     ofBackground(0);
     
-    ofxActivityMonitor::Instance()->test();
+//    ofxActivityMonitor::Instance()->test();
     
     string monitor = "";
     monitor += "-----------------------------------CPU------------------------------------";
     monitor += "\n";
     monitor += "      Number of Cores: ";
-    monitor += ofToString(ofxActivityMonitor::Instance()->getNumCPUCores());
+    monitor += ofToString(mon->getNumCPUCores());
     monitor += "\n";
     monitor += "    CPU Load Averages: ";
-    monitor += ofToString(ofxActivityMonitor::Instance()->getCPULoadAvg());
+    monitor += ofToString(mon->getCPULoadAvg());
     monitor += "\n";
     monitor += "-----------------------------------RAM------------------------------------";
     monitor += "\n";
     monitor += "          Memory Used: ";
-    monitor += ofToString(ofxActivityMonitor::Instance()->getSystemMemoryUsed());
+    monitor += ofToString(mon->getSystemMemoryUsed());
     monitor += "\n";
     monitor += "       Process Memory: ";
-    monitor += ofToString(ofxActivityMonitor::Instance()->getSystemMemoryUsedProcess());
+    monitor += ofToString(mon->getSystemMemoryUsedProcess());
     monitor += "\n";
     monitor += "         Total Memory: ";
-    monitor += ofToString(ofxActivityMonitor::Instance()->getSystemMemoryTotal());
+    monitor += ofToString(mon->getSystemMemoryTotal());
     monitor += "\n";
     monitor += "-----------------------------------GPU------------------------------------";
     monitor += "\n";
     monitor += "     Total GPU Memory: ";
-    monitor += ofToString(ofxActivityMonitor::Instance()->getGPUMemoryTotal());
+    monitor += ofToString(mon->getGPUMemoryTotal());
     monitor += "\n";
     monitor += "Total GPU Memory Used: ";
-    monitor += ofToString(ofxActivityMonitor::Instance()->getGPUMemoryUsed());
+    monitor += ofToString(mon->getGPUMemoryUsed());
     monitor += "\n";
     monitor += "           GPU Vendor: ";
-    monitor += ofxActivityMonitor::Instance()->getGPUVendor();
+    monitor += mon->getGPUVendor();
     monitor += "\n";
     monitor += "         GPU Renderer: ";
-    monitor += ofxActivityMonitor::Instance()->getGPURenderer();
+    monitor += mon->getGPURenderer();
     monitor += "\n";
     monitor += "          GPU Version: ";
-    monitor += ofxActivityMonitor::Instance()->getGPUVersion();
+    monitor += mon->getGPUVersion();
     monitor += "\n";
     monitor += "GPU Shading Lang Ver.: ";
-    monitor += ofxActivityMonitor::Instance()->getGPUShadingLanguageVersion();
+    monitor += mon->getGPUShadingLanguageVersion();
     monitor += "\n";
     /*
     monitor += "       GPU Extensions: ";
@@ -76,47 +78,3 @@ void testApp::draw(){
     
 }
 
-//--------------------------------------------------------------
-void testApp::keyPressed(int key){
-
-}
-
-//--------------------------------------------------------------
-void testApp::keyReleased(int key){
-
-}
-
-//--------------------------------------------------------------
-void testApp::mouseMoved(int x, int y){
-
-}
-
-//--------------------------------------------------------------
-void testApp::mouseDragged(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void testApp::mousePressed(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void testApp::mouseReleased(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void testApp::windowResized(int w, int h){
-
-}
-
-//--------------------------------------------------------------
-void testApp::gotMessage(ofMessage msg){
-
-}
-
-//--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo dragInfo){ 
-
-}
